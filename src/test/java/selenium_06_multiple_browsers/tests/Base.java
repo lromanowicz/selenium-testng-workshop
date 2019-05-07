@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import static selenium_06_multiple_browsers.tests.Config.browser;
 
@@ -14,7 +14,7 @@ public class Base {
 
     protected WebDriver driver;
 
-    @BeforeClass
+    @BeforeMethod
     protected void before() {
         if (browser.equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
@@ -28,7 +28,7 @@ public class Base {
         }
     }
 
-    @AfterClass
+    @AfterMethod
     protected void after() {
         driver.quit();
     }

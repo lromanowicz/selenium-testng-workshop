@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
@@ -28,7 +28,7 @@ public class LoginTest {
      * @throws MalformedURLException
      */
 
-    @BeforeClass
+    @BeforeMethod
     public void setUp() throws MalformedURLException {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
@@ -61,7 +61,7 @@ public class LoginTest {
      *  - Closing driver after each test
      */
 
-    @AfterClass
+    @AfterMethod
     public void tearDown() {
         driver.quit();
     }

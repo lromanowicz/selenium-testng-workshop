@@ -4,8 +4,8 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -13,7 +13,7 @@ import static org.testng.Assert.assertEquals;
 public class JavaScriptAlertTest {
     private WebDriver driver;
 
-    @BeforeClass
+    @BeforeMethod
     public void setUp() {
         String os = System.getProperty("os.name").toLowerCase();
         if(os.indexOf("win") >= 0) {
@@ -35,7 +35,7 @@ public class JavaScriptAlertTest {
         assertEquals("You clicked: Ok", result);
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown() {
         driver.quit();
     }

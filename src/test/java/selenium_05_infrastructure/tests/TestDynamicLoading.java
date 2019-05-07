@@ -28,5 +28,4 @@ public class TestDynamicLoading extends Base {
         assertTrue("finish text didn't render after loading",
                 dynamicLoading.isFinishTextTextPresent());
     }
-
 }
